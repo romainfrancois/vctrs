@@ -1,0 +1,13 @@
+pandoc: '2.2'
+pkgdown: 1.1.0.9000
+pkgdown_sha: 77ceb8cc8bc815020a24f1f690e91d590d3a52e2
+articles:
+  double-dispatch: double-dispatch.html
+  function-types: function-types.html
+  s3-base: s3-base.html
+  s3-proxy: s3-proxy.html
+  s3-vector: s3-vector.html
+urls:
+  reference: https://vctrs.r-lib.org/reference
+  article: https://vctrs.r-lib.org/articles
+
