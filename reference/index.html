@@ -8,21 +8,36 @@
 
 <title>Function reference • vctrs</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+
 <!-- jquery -->
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,15 +45,16 @@
 
 
 
-<meta property="og:title" content="Function reference" />
 
+<meta property="og:title" content="Function reference" />
 <meta property="og:image" content="https://vctrs.r-lib.org/logo.png" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
 <!-- mathjax -->
-<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -46,9 +62,20 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115082821-1');
+</script>
+
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -62,7 +89,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vctrs</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0.9000</span>
       </span>
     </div>
 
@@ -70,7 +97,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -85,28 +112,27 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/double-dispatch.html">Double dispatch</a>
-    </li>
-    <li>
-      <a href="../articles/function-types.html">Function types</a>
-    </li>
-    <li>
-      <a href="../articles/s3-base.html">Base classes</a>
-    </li>
-    <li>
-      <a href="../articles/s3-proxy.html">Proxy generics</a>
+      <a href="../articles/pillar.html">Printing vectors nicely in tibbles</a>
     </li>
     <li>
       <a href="../articles/s3-vector.html">S3 vectors</a>
     </li>
+    <li>
+      <a href="../articles/stability.html">Type and size stability</a>
+    </li>
+    <li>
+      <a href="../articles/type-size.html">Prototypes and sizes</a>
+    </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/r-lib/vctrs">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/r-lib/vctrs/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -117,6 +143,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -136,10 +163,84 @@
     <tbody>
       <tr>
         <th colspan="2">
+          <h2 id="section-user-faq" class="hasAnchor"><a href="#section-user-faq" class="anchor"></a>User FAQ</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="faq-error-incompatible-attributes.html">faq-error-incompatible-attributes</a></code> </p>
+        </td>
+        <td><p>FAQ - Error/Warning: Some attributes are incompatible</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-developer-faq" class="hasAnchor"><a href="#section-developer-faq" class="anchor"></a>Developer FAQ</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="howto-faq-coercion-data-frame.html">howto-faq-coercion-data-frame</a></code> </p>
+        </td>
+        <td><p>FAQ - How to implement ptype2 and cast methods? (Data frames)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="howto-faq-coercion.html">howto-faq-coercion</a></code> </p>
+        </td>
+        <td><p>FAQ - How to implement ptype2 and cast methods?</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="theory-faq-coercion.html">theory-faq-coercion</a></code> </p>
+        </td>
+        <td><p>FAQ - How does coercion work in vctrs?</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-internal-faq" class="hasAnchor"><a href="#section-internal-faq" class="anchor"></a>Internal FAQ</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="internal-faq-ptype2-identity.html">internal-faq-ptype2-identity</a></code> </p>
+        </td>
+        <td><p>Internal FAQ - <code>vec_ptype2()</code>, <code>NULL</code>, and unspecified vectors</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
           <h2 id="section-foundations" class="hasAnchor"><a href="#section-foundations" class="anchor"></a>Foundations</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -149,23 +250,40 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="vec_ptype.html">vec_ptype()</a></code> </p>
+          <p><code><a href="vec_ptype.html">vec_ptype()</a></code> <code><a href="vec_ptype.html">vec_ptype_common()</a></code> <code><a href="vec_ptype.html">vec_ptype_show()</a></code> </p>
         </td>
         <td><p>Find the prototype of a set of vectors</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="dims.html">vec_obs()</a></code> <code><a href="dims.html">vec_empty()</a></code> <code><a href="dims.html">vec_dim()</a></code> <code><a href="dims.html">vec_dims()</a></code> </p>
+          <p><code><a href="vec_size.html">vec_size()</a></code> <code><a href="vec_size.html">vec_size_common()</a></code> <code><a href="vec_size.html">list_sizes()</a></code> <code><a href="vec_size.html">vec_is_empty()</a></code> </p>
         </td>
-        <td><p>Vector dimensions</p></td>
+        <td><p>Number of observations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_assert.html">vec_assert()</a></code> <code><a href="vec_assert.html">vec_is()</a></code> </p>
+        </td>
+        <td><p>Assert an argument has known prototype and/or size</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_is_list.html">vec_is_list()</a></code> </p>
+        </td>
+        <td><p>Is the object a list?</p></td>
       </tr>
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-casting-and-combining" class="hasAnchor"><a href="#section-casting-and-combining" class="anchor"></a>Casting and combining</h2>
+          <h2 id="section-combining" class="hasAnchor"><a href="#section-combining" class="anchor"></a>Combining</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -181,23 +299,103 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="vec_coerce.html">vec_coerce()</a></code> </p>
+          <p><code><a href="name_spec.html">name_spec</a></code> </p>
         </td>
-        <td><p>Coerce vectors to common type</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="vec_recycle.html">vec_recycle()</a></code> </p>
-        </td>
-        <td><p>Recycle vector types to common number of observations</p></td>
+        <td><p>Name specifications</p></td>
       </tr>
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-matching" class="hasAnchor"><a href="#section-matching" class="anchor"></a>Matching</h2>
+          <h2 id="section-slicing-and-recycling" class="hasAnchor"><a href="#section-slicing-and-recycling" class="anchor"></a>Slicing and recycling</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="vec_init.html">vec_init()</a></code> </p>
+        </td>
+        <td><p>Initialize a vector</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_slice.html">vec_slice()</a></code> <code><a href="vec_slice.html">`vec_slice&lt;-`()</a></code> <code><a href="vec_slice.html">vec_assign()</a></code> </p>
+        </td>
+        <td><p>Get or set observations in a vector</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_recycle.html">vec_recycle()</a></code> <code><a href="vec_recycle.html">vec_recycle_common()</a></code> </p>
+        </td>
+        <td><p>Vector recycling</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_chop.html">vec_chop()</a></code> <code><a href="vec_chop.html">vec_unchop()</a></code> </p>
+        </td>
+        <td><p>Chopping</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-equality-and-ordering" class="hasAnchor"><a href="#section-equality-and-ordering" class="anchor"></a>Equality and ordering</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="vec_equal.html">vec_equal()</a></code> <code><a href="vec_equal.html">vec_equal_na()</a></code> </p>
+        </td>
+        <td><p>Test if two vectors are equal</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_compare.html">vec_compare()</a></code> </p>
+        </td>
+        <td><p>Compare two vectors</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-sorting" class="hasAnchor"><a href="#section-sorting" class="anchor"></a>Sorting</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="vec_order.html">vec_order()</a></code> <code><a href="vec_order.html">vec_sort()</a></code> </p>
+        </td>
+        <td><p>Order and sort vectors</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-matching-and-splitting" class="hasAnchor"><a href="#section-matching-and-splitting" class="anchor"></a>Matching and splitting</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -222,6 +420,37 @@
           <p><code><a href="vec_match.html">vec_match()</a></code> <code><a href="vec_match.html">vec_in()</a></code> </p>
         </td>
         <td><p>Find matching observations across vectors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_split.html">vec_split()</a></code> </p>
+        </td>
+        <td><p>Split a vector into groups</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-sequences-and-repetitions" class="hasAnchor"><a href="#section-sequences-and-repetitions" class="anchor"></a>Sequences and repetitions</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="vec-rep.html">vec_rep()</a></code> <code><a href="vec-rep.html">vec_rep_each()</a></code> </p>
+        </td>
+        <td><p>Repeat a vector</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_seq_along.html">vec_seq_along()</a></code> <code><a href="vec_seq_along.html">vec_init_along()</a></code> </p>
+        </td>
+        <td><p>Useful sequences</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -230,12 +459,36 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
-          <p><code><a href="list_of.html">list_of()</a></code> <code><a href="list_of.html">as_list_of()</a></code> <code><a href="list_of.html">is_list_of()</a></code> <code><a href="list_of.html">vec_type2(<i>&lt;vctrs_list_of&gt;</i>)</a></code> <code><a href="list_of.html">vec_cast(<i>&lt;vctrs_list_of&gt;</i>)</a></code> </p>
+          <p><code><a href="list_of.html">list_of()</a></code> <code><a href="list_of.html">as_list_of()</a></code> <code><a href="list_of.html">validate_list_of()</a></code> <code><a href="list_of.html">is_list_of()</a></code> <code><a href="list_of.html">vec_ptype2(<i>&lt;vctrs_list_of&gt;</i>)</a></code> <code><a href="list_of.html">vec_cast(<i>&lt;vctrs_list_of&gt;</i>)</a></code> </p>
         </td>
         <td><p><code>list_of</code> S3 class for homogenous lists</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-user-tools" class="hasAnchor"><a href="#section-user-tools" class="anchor"></a>User tools</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="op-empty-default.html">`%0%`</a></code> </p>
+        </td>
+        <td><p>Default value for empty vectors</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -244,6 +497,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -253,9 +511,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="vec_cast.html">vec_cast()</a></code> <code><a href="vec_cast.html">vec_restore()</a></code> </p>
+          <p><code><a href="vec_cast.html">vec_cast()</a></code> <code><a href="vec_cast.html">vec_cast_common()</a></code> </p>
         </td>
-        <td><p>Cast a vector to specified type</p></td>
+        <td><p>Cast a vector to a specified type</p></td>
       </tr><tr>
         
         <td>
@@ -265,9 +523,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="vec_type2.html">vec_type2()</a></code> </p>
+          <p><code><a href="vec_ptype2.html">vec_ptype2()</a></code> </p>
         </td>
-        <td><p>Find the common type for a pair of vector types</p></td>
+        <td><p>Find the common type for a pair of vectors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_proxy_compare.html">vec_proxy_compare()</a></code> </p>
+        </td>
+        <td><p>Comparison proxy</p></td>
       </tr><tr>
         
         <td>
@@ -283,7 +547,19 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="vctrs-conditions.html">stop_incompatible_type()</a></code> <code><a href="vctrs-conditions.html">stop_incompatible_cast()</a></code> <code><a href="vctrs-conditions.html">stop_incompatible_op()</a></code> <code><a href="vctrs-conditions.html">warn_lossy_cast()</a></code> </p>
+          <p><code><a href="new_partial.html">new_partial()</a></code> <code><a href="new_partial.html">is_partial()</a></code> <code><a href="new_partial.html">vec_ptype_finalise()</a></code> </p>
+        </td>
+        <td><p>Partial type</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="df_ptype2.html">df_ptype2()</a></code> <code><a href="df_ptype2.html">df_cast()</a></code> <code><a href="df_ptype2.html">tib_ptype2()</a></code> <code><a href="df_ptype2.html">tib_cast()</a></code> </p>
+        </td>
+        <td><p>Coercion between two data frames</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vctrs-conditions.html">stop_incompatible_type()</a></code> <code><a href="vctrs-conditions.html">stop_incompatible_cast()</a></code> <code><a href="vctrs-conditions.html">stop_incompatible_op()</a></code> <code><a href="vctrs-conditions.html">stop_incompatible_size()</a></code> <code><a href="vctrs-conditions.html">allow_lossy_cast()</a></code> </p>
         </td>
         <td><p>Custom conditions for vctrs package</p></td>
       </tr><tr>
@@ -295,39 +571,77 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="fields.html">fields()</a></code> <code><a href="fields.html">n_fields()</a></code> <code><a href="fields.html">field()</a></code> <code><a href="fields.html">`field<-`()</a></code> </p>
+          <p><code><a href="fields.html">fields()</a></code> <code><a href="fields.html">n_fields()</a></code> <code><a href="fields.html">field()</a></code> <code><a href="fields.html">`field&lt;-`()</a></code> </p>
         </td>
         <td><p>Tools for accessing the fields of a record.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="vec_method_register.html">vec_method_register()</a></code> </p>
+          <p><code><a href="s3_register.html">s3_register()</a></code> </p>
         </td>
         <td><p>Register a method for a suggested dependency</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_arith.html">vec_arith()</a></code> <code><a href="vec_arith.html">vec_arith_base()</a></code> <code><a href="vec_arith.html">MISSING()</a></code> </p>
+        </td>
+        <td><p>Arithmetic operations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_math.html">vec_math()</a></code> <code><a href="vec_math.html">vec_math_base()</a></code> </p>
+        </td>
+        <td><p>Mathematical operations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="unspecified.html">unspecified()</a></code> </p>
+        </td>
+        <td><p>A 1d vector of unspecified type</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_default_ptype2.html">vec_default_cast()</a></code> <code><a href="vec_default_ptype2.html">vec_default_ptype2()</a></code> </p>
+        </td>
+        <td><p>Default cast and ptype2 methods</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_as_names.html">vec_as_names()</a></code> </p>
+        </td>
+        <td><p>Retrieve and repair names</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_as_location.html">vec_as_location()</a></code> <code><a href="vec_as_location.html">num_as_location()</a></code> <code><a href="vec_as_location.html">vec_as_location2()</a></code> <code><a href="vec_as_location.html">num_as_location2()</a></code> </p>
+        </td>
+        <td><p>Create a vector of locations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_as_subscript.html">vec_as_subscript()</a></code> <code><a href="vec_as_subscript.html">vec_as_subscript2()</a></code> </p>
+        </td>
+        <td><p>Convert to a base subscript type</p></td>
       </tr>
     </tbody>
     </table>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-foundations">Foundations</a></li>
-      <li><a href="#section-casting-and-combining">Casting and combining</a></li>
-      <li><a href="#section-matching">Matching</a></li>
-      <li><a href="#section-new-classes">New classes</a></li>
-      <li><a href="#section-developer-tools">Developer tools</a></li>
-    </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
+
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='http://hadley.nz'>Hadley Wickham</a>.</p>
+  <p>Developed by <a href='http://hadley.nz'>Hadley Wickham</a>, Lionel Henry, Davis Vaughan.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
@@ -335,6 +649,8 @@
 
   
 
+
   </body>
 </html>
+
 
