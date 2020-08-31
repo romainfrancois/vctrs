@@ -94,7 +94,7 @@ an implementation detail invisible to the user (unlike a data.frame)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vctrs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.4</span>
       </span>
     </div>
 
@@ -167,20 +167,17 @@ length, like <a href='https://rdrr.io/r/base/DateTimeClasses.html'>POSIXlt</a>, 
 an implementation detail invisible to the user (unlike a <a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a>).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>new_rcrd</span>(<span class='no'>fields</span>, <span class='no'>...</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>())</pre>
+    <pre class="usage"><span class='fu'>new_rcrd</span>(<span class='kw'>fields</span>, <span class='kw'>...</span>, class = <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>())</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>fields</th>
-      <td><p>A list. It must possess the following properties:</p><ul>
-<li><p>no attributes (apart from names)</p></li>
-<li><p>syntactic names</p></li>
-<li><p>length 1 or greater</p></li>
-<li><p>elements are vectors</p></li>
-<li><p>elements have equal length</p></li>
-</ul></td>
+      <td><p>A list or a data frame. Lists must be rectangular
+(same sizes), and contain uniquely named vectors (at least
+one). <code>fields</code> is validated with <code><a href='df_list.html'>df_list()</a></code> to ensure uniquely
+named vectors.</p></td>
     </tr>
     <tr>
       <th>...</th>

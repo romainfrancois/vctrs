@@ -82,6 +82,7 @@ vec_rbind(
   data.frame(x = 1, y = 2)
 )
 #&amp;gt; Error: Can't combine `..1$x` &amp;lt;character&amp;gt; and `..2$x` &amp;lt;double&amp;gt;.
+
 One major goal of vctrs is to provide a central place for implementing
 the coercion methods that make generic combinations possible. The two
 relevant generics are vec_ptype2() and vec_cast(). They both take
@@ -136,6 +137,7 @@ vec_ptype2(factor(&quot;a&quot;), &quot;b&quot;)
 vec_ptype2(factor(&quot;a&quot;), 1L)
 #&amp;gt; Error: Can't combine &amp;lt;factor&amp;lt;127a2&amp;gt;&amp;gt; and &amp;lt;integer&amp;gt;.
 
+
 Richness of type
 
 
@@ -148,6 +150,7 @@ coercible.
 Let’s look again at what happens when we combine a factor and a
 character:vec_ptype2(factor(&quot;a&quot;), &quot;b&quot;)
 #&amp;gt; character(0)
+
 The ptype2 method for &amp;lt;character&amp;gt; and &amp;lt;factor&amp;lt;&quot;a&quot;&amp;gt;&amp;gt; returns
 &amp;lt;character&amp;gt; because the former is a richer type. The factor can only
 contain &quot;a&quot; strings, whereas the character can contain any strings. In
@@ -170,6 +173,7 @@ levels are aggregated in order:vec_ptype2(factor(c(&quot;a&quot;, &quot;c&quot;)
 vec_ptype2(factor(&quot;b&quot;), factor(c(&quot;a&quot;, &quot;c&quot;)))
 #&amp;gt; factor(0)
 #&amp;gt; Levels: b a c
+
 In any case, permuting the input should not return a fundamentally
 different type or introduce an incompatible type error.
 
@@ -272,6 +276,7 @@ vec_rbind(df1, df2)
 #&amp;gt;   x
 #&amp;gt; 1 1
 #&amp;gt; 2 1
+
 When a tibble is involved, we fall back to tibble:df3 &amp;lt;- tibble::as_tibble(df1)
 
 vec_rbind(df1, df3)
@@ -280,6 +285,7 @@ vec_rbind(df1, df3)
 #&amp;gt;   &amp;lt;dbl&amp;gt;
 #&amp;gt; 1     1
 #&amp;gt; 2     1
+
 These fallbacks are not ideal but they make sense because all data
 frames share a common data structure. This is not generally the case for
 vectors. For example factors and characters have different
@@ -335,7 +341,7 @@ class in R scripts.
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vctrs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.4</span>
       </span>
     </div>
 
@@ -401,7 +407,7 @@ class in R scripts.
     </div>
 
     <div class="ref-description">
-    <p>This is an overview of the usage of <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> and <code><a href='vec_cast.html'>vec_cast()</a></code> and
+    <p>This is an overview of the usage of <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> and <code><a href='vec_cast.html'>vec_cast()</a></code> and
 their role in the vctrs coercion mechanism. Related topics:</p><ul>
 <li><p>For an example of implementing coercion methods for simple vectors,
 see <code><a href='howto-faq-coercion.html'>?howto-faq-coercion</a></code>.</p></li>
@@ -411,7 +417,7 @@ subclasses, see
 <li><p>For a tutorial about implementing vctrs classes from scratch, see
 <code><a href='../articles/s3-vector.html'>vignette("s3-vector")</a></code>.</p></li>
 </ul>
-<h3>Combination mechanism in vctrs</h3>
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Combination mechanism in vctrs</h3>
 
 
 <p>The coercion system in vctrs is designed to make combination of multiple
@@ -424,26 +430,27 @@ functions that use the split-apply-combine strategy. For example:<div class="r">
 <span class='co'>#&gt; Error: Can't combine `..1` &lt;character&gt; and `..2` &lt;double&gt;.</span>
 
 <span class='fu'><a href='vec_bind.html'>vec_rbind</a></span>(
-  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),
-  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(x = <span class='fl'>TRUE</span>),
+  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(x = <span class='fl'>1</span>, y = <span class='fl'>2</span>)
 )
 <span class='co'>#&gt;   x  y</span>
 <span class='co'>#&gt; 1 1 NA</span>
 <span class='co'>#&gt; 2 1  2</span>
 
 <span class='fu'><a href='vec_bind.html'>vec_rbind</a></span>(
-  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"a"</span>),
-  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(x = <span class='st'>"a"</span>),
+  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(x = <span class='fl'>1</span>, y = <span class='fl'>2</span>)
 )
-<span class='co'>#&gt; Error: Can't combine `..1$x` &lt;character&gt; and `..2$x` &lt;double&gt;.</span></pre><p></div></p>
+<span class='co'>#&gt; Error: Can't combine `..1$x` &lt;character&gt; and `..2$x` &lt;double&gt;.</span>
+</pre><p></div></p>
 <p>One major goal of vctrs is to provide a central place for implementing
 the coercion methods that make generic combinations possible. The two
-relevant generics are <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> and <code><a href='vec_cast.html'>vec_cast()</a></code>. They both take
+relevant generics are <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> and <code><a href='vec_cast.html'>vec_cast()</a></code>. They both take
 two arguments and perform <strong>double dispatch</strong>, meaning that a method is
 selected based on the classes of both inputs.</p>
 <p>The general mechanism for combining multiple inputs is:</p><ol>
 <li><p>Find the common type of a set of inputs by reducing (as in
-<code><a href='https://rdrr.io/r/base/funprog.html'>base::Reduce()</a></code> or <code><a href='https://purrr.tidyverse.org/reference/reduce.html'>purrr::reduce()</a></code>) the <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> binary
+<code><a href='https://rdrr.io/r/base/funprog.html'>base::Reduce()</a></code> or <code><a href='https://purrr.tidyverse.org/reference/reduce.html'>purrr::reduce()</a></code>) the <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> binary
 function over the set.</p></li>
 <li><p>Convert all inputs to the common type with <code><a href='vec_cast.html'>vec_cast()</a></code>.</p></li>
 <li><p>Initialise the output vector as an instance of this common type with
@@ -455,12 +462,12 @@ function over the set.</p></li>
 <p>The last two steps may require <code><a href='vec_proxy.html'>vec_proxy()</a></code> and <code><a href='vec_proxy.html'>vec_restore()</a></code>
 implementations, unless the attributes of your class are constant and do
 not depend on the contents of the vector. We focus here on the first two
-steps, which require <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> and <code><a href='vec_cast.html'>vec_cast()</a></code> implementations.</p>
+steps, which require <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> and <code><a href='vec_cast.html'>vec_cast()</a></code> implementations.</p>
 
-<h3><code><a href='vec_ptype2.html'>vec_ptype2()</a></code></h3>
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a><code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code></h3>
 
 
-<p>Methods for <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> are passed two <em>prototypes</em>, i.e. two inputs
+<p>Methods for <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> are passed two <em>prototypes</em>, i.e. two inputs
 emptied of their elements. They implement two behaviours:</p><ul>
 <li><p>If the types of their inputs are compatible, indicate which of them
 is the richer type by returning it. If the types are of equal
@@ -469,7 +476,7 @@ resolution, return any of the two.</p></li>
 determined from the attributes that the types of the inputs are not
 compatible.</p></li>
 </ul>
-<h3>Type compatibility</h3>
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Type compatibility</h4>
 
 
 <p>A type is <strong>compatible</strong> with another type if the values it represents
@@ -478,19 +485,20 @@ of “value” is to be interpreted at a high level, in particular it is not
 the same as the memory representation. For example, factors are
 represented in memory with integers but their values are more related to
 character vectors than to round numbers:<div class="r"></p><pre><span class='co'># Two factors are compatible</span>
-<span class='fu'><a href='vec_ptype2.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"a"</span>), <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"b"</span>))
+<span class='fu'><a href='vec_ptype2.logical.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"a"</span>), <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"b"</span>))
 <span class='co'>#&gt; factor(0)</span>
 <span class='co'>#&gt; Levels: a b</span>
 
 <span class='co'># Factors are compatible with a character</span>
-<span class='fu'><a href='vec_ptype2.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"a"</span>), <span class='st'>"b"</span>)
+<span class='fu'><a href='vec_ptype2.logical.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"a"</span>), <span class='st'>"b"</span>)
 <span class='co'>#&gt; character(0)</span>
 
 <span class='co'># But they are incompatible with integers</span>
-<span class='fu'><a href='vec_ptype2.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"a"</span>), <span class='fl'>1L</span>)
-<span class='co'>#&gt; Error: Can't combine &lt;factor&lt;127a2&gt;&gt; and &lt;integer&gt;.</span></pre><p></div></p>
+<span class='fu'><a href='vec_ptype2.logical.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"a"</span>), <span class='fl'>1L</span>)
+<span class='co'>#&gt; Error: Can't combine &lt;factor&lt;127a2&gt;&gt; and &lt;integer&gt;.</span>
+</pre><p></div></p>
 
-<h3>Richness of type</h3>
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Richness of type</h4>
 
 
 <p>Richness of type is not a very precise notion. It can be about richer
@@ -500,8 +508,9 @@ vector), richer behaviour (a <code>data.table</code> has richer behaviour than a
 two types is richer, it probably means they shouldn’t be automatically
 coercible.</p>
 <p>Let’s look again at what happens when we combine a factor and a
-character:<div class="r"></p><pre><span class='fu'><a href='vec_ptype2.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"a"</span>), <span class='st'>"b"</span>)
-<span class='co'>#&gt; character(0)</span></pre><p></div></p>
+character:<div class="r"></p><pre><span class='fu'><a href='vec_ptype2.logical.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"a"</span>), <span class='st'>"b"</span>)
+<span class='co'>#&gt; character(0)</span>
+</pre><p></div></p>
 <p>The ptype2 method for <code>&lt;character&gt;</code> and <code>&lt;factor&lt;"a"&gt;&gt;</code> returns
 <code>&lt;character&gt;</code> because the former is a richer type. The factor can only
 contain <code>"a"</code> strings, whereas the character can contain any strings. In
@@ -512,22 +521,23 @@ decided to be laxer in vctrs because it is easy to inadvertently create
 factors instead of character vectors, especially with older versions of
 R where <code>stringsAsFactors</code> is still true by default.</p>
 
-<h3>Consistency and symmetry on permutation</h3>
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Consistency and symmetry on permutation</h4>
 
 
 <p>Each ptype2 method should strive to have exactly the same behaviour when
 the inputs are permuted. This is not always possible, for example factor
-levels are aggregated in order:<div class="r"></p><pre><span class='fu'><a href='vec_ptype2.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"c"</span>)), <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"b"</span>))
+levels are aggregated in order:<div class="r"></p><pre><span class='fu'><a href='vec_ptype2.logical.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"c"</span>)), <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"b"</span>))
 <span class='co'>#&gt; factor(0)</span>
 <span class='co'>#&gt; Levels: a c b</span>
 
-<span class='fu'><a href='vec_ptype2.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"b"</span>), <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"c"</span>)))
+<span class='fu'><a href='vec_ptype2.logical.html'>vec_ptype2</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>"b"</span>), <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"c"</span>)))
 <span class='co'>#&gt; factor(0)</span>
-<span class='co'>#&gt; Levels: b a c</span></pre><p></div></p>
+<span class='co'>#&gt; Levels: b a c</span>
+</pre><p></div></p>
 <p>In any case, permuting the input should not return a fundamentally
 different type or introduce an incompatible type error.</p>
 
-<h3>Coercion hierarchy</h3>
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Coercion hierarchy</h4>
 
 
 <p>Coercible classes form a coercion (or subtyping) hierarchy. Here is a
@@ -543,25 +553,25 @@ typically by adding parent nodes on top of the hierarchy (your class is
 richer), by adding children node at the root of the hierarchy (your
 class is more constrained), or by inserting a node in the tree.</p>
 <p>These coercion hierarchies are <em>implicit</em>, in the sense that they are
-implied by the <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> implementations. There is no structured
+implied by the <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> implementations. There is no structured
 way to create or modify a hierarchy, instead you need to implement the
 appropriate coercion methods for all the types in your hierarchy, and
-diligently return the richer type in each case. The <code><a href='vec_ptype2.html'>vec_ptype2()</a></code>
+diligently return the richer type in each case. The <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code>
 implementations are not transitive nor inherited, so all pairwise
 methods between classes lying on a given path must be implemented
 manually. This is something we might make easier in the future.</p>
 
 
 
-<h3><code><a href='vec_cast.html'>vec_cast()</a></code></h3>
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a><code><a href='vec_cast.html'>vec_cast()</a></code></h3>
 
 
 <p>The second generic, <code><a href='vec_cast.html'>vec_cast()</a></code>, is the one that looks at the data and
 actually performs the conversion. Because it has access to more
-information than <code><a href='vec_ptype2.html'>vec_ptype2()</a></code>, it may be stricter and cause an error
+information than <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code>, it may be stricter and cause an error
 in more cases. <code><a href='vec_cast.html'>vec_cast()</a></code> has three possible behaviours:</p><ul>
 <li><p>Determine that the prototypes of the two inputs are not compatible.
-This must be decided in exactly the same way as for <code><a href='vec_ptype2.html'>vec_ptype2()</a></code>.
+This must be decided in exactly the same way as for <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code>.
 Call <code><a href='vctrs-conditions.html'>stop_incompatible_cast()</a></code> if you can determine from the
 attributes that the types are not compatible.</p></li>
 <li><p>Detect incompatible values. Usually this is because the target type
@@ -569,16 +579,16 @@ is too restricted for the values supported by the input type. For
 example, a fractional number can’t be converted to an integer. The
 method should throw an error in that case.</p></li>
 <li><p>Return the input vector converted to the target type if all values
-are compatible. Whereas <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> must return the same type
+are compatible. Whereas <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> must return the same type
 when the inputs are permuted, <code><a href='vec_cast.html'>vec_cast()</a></code> is <em>directional</em>. It
 always returns the type of the right-hand side, or dies trying.</p></li>
 </ul>
 
 
-<h3>Double dispatch</h3>
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Double dispatch</h3>
 
 
-<p>The dispatch mechanism for <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> and <code><a href='vec_cast.html'>vec_cast()</a></code> looks like S3
+<p>The dispatch mechanism for <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> and <code><a href='vec_cast.html'>vec_cast()</a></code> looks like S3
 but is actually a custom mechanism. Compared to S3, it has the following
 differences:</p><ul>
 <li><p>It dispatches on the classes of the first two inputs.</p></li>
@@ -591,15 +601,15 @@ explicitly if necessary.</p></li>
 </ul>
 
 
-<h3>Data frames</h3>
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Data frames</h3>
 
 
-<p>The determination of the common type of data frames with <code><a href='vec_ptype2.html'>vec_ptype2()</a></code>
+<p>The determination of the common type of data frames with <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code>
 happens in three steps:</p><ol>
 <li><p>Match the columns of the two input data frames. If some columns
 don’t exist, they are created and filled with adequately typed
 <code>NA</code> values.</p></li>
-<li><p>Find the common type for each column by calling <code><a href='vec_ptype2.html'>vec_ptype2()</a></code> on
+<li><p>Find the common type for each column by calling <code><a href='vec_ptype2.logical.html'>vec_ptype2()</a></code> on
 each pair of matched columns.</p></li>
 <li><p>Find the common data frame type. For example the common type of a
 grouped tibble and a tibble is a grouped tibble because the latter
@@ -612,28 +622,30 @@ type that has fewer columns, this is an error.</p>
 <p>If you are implementing coercion methods for data frames, you will need
 to explicitly call the parent methods that perform the common type
 determination or the type conversion described above. These are exported
-as <code><a href='df_ptype2.html'>df_ptype2()</a></code> and <code><a href='df_ptype2.html'>df_cast()</a></code>.</p><h3>Data frame fallbacks</h3>
+as <code><a href='df_ptype2.html'>df_ptype2()</a></code> and <code><a href='df_ptype2.html'>df_cast()</a></code>.</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Data frame fallbacks</h4>
 
 
 <p>Being too strict with data frame combinations would cause too much pain
 because there are many data frame subclasses in the wild that don’t
 implement vctrs methods. We have decided to implement a special fallback
 behaviour for foreign data frames. Incompatible data frames fall back to
-a base data frame:<div class="r"></p><pre><span class='no'>df1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)
-<span class='no'>df2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/structure.html'>structure</a></span>(<span class='no'>df1</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"foreign_df"</span>, <span class='st'>"data.frame"</span>))
+a base data frame:<div class="r"></p><pre><span class='kw'>df1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(x = <span class='fl'>1</span>)
+<span class='kw'>df2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/structure.html'>structure</a></span>(<span class='kw'>df1</span>, class = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"foreign_df"</span>, <span class='st'>"data.frame"</span>))
 
-<span class='fu'><a href='vec_bind.html'>vec_rbind</a></span>(<span class='no'>df1</span>, <span class='no'>df2</span>)
+<span class='fu'><a href='vec_bind.html'>vec_rbind</a></span>(<span class='kw'>df1</span>, <span class='kw'>df2</span>)
 <span class='co'>#&gt;   x</span>
 <span class='co'>#&gt; 1 1</span>
-<span class='co'>#&gt; 2 1</span></pre><p></div></p>
-<p>When a tibble is involved, we fall back to tibble:<div class="r"></p><pre><span class='no'>df3</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span>(<span class='no'>df1</span>)
+<span class='co'>#&gt; 2 1</span>
+</pre><p></div></p>
+<p>When a tibble is involved, we fall back to tibble:<div class="r"></p><pre><span class='kw'>df3</span> <span class='op'>&lt;-</span> <span class='kw'>tibble</span>::<span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span>(<span class='kw'>df1</span>)
 
-<span class='fu'><a href='vec_bind.html'>vec_rbind</a></span>(<span class='no'>df1</span>, <span class='no'>df3</span>)
+<span class='fu'><a href='vec_bind.html'>vec_rbind</a></span>(<span class='kw'>df1</span>, <span class='kw'>df3</span>)
 <span class='co'>#&gt; # A tibble: 2 x 1</span>
 <span class='co'>#&gt;       x</span>
 <span class='co'>#&gt;   &lt;dbl&gt;</span>
 <span class='co'>#&gt; 1     1</span>
-<span class='co'>#&gt; 2     1</span></pre><p></div></p>
+<span class='co'>#&gt; 2     1</span>
+</pre><p></div></p>
 <p>These fallbacks are not ideal but they make sense because all data
 frames share a common data structure. This is not generally the case for
 vectors. For example factors and characters have different
