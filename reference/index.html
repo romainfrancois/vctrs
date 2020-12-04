@@ -89,19 +89,13 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">vctrs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.4.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -410,6 +404,31 @@
     </tbody><tbody>
       <tr>
         <th colspan="2">
+          <h2 id="section-assigning" class="hasAnchor"><a href="#section-assigning" class="anchor"></a>Assigning</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="vec_slice.html">vec_slice()</a></code> <code><a href="vec_slice.html">`vec_slice&lt;-`()</a></code> <code><a href="vec_slice.html">vec_assign()</a></code> </p>
+        </td>
+        <td><p>Get or set observations in a vector</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_fill_missing.html">vec_fill_missing()</a></code> </p>
+        </td>
+        <td><p>Fill in missing values with the previous or following value</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
           <h2 id="section-equality-and-ordering" class="hasAnchor"><a href="#section-equality-and-ordering" class="anchor"></a>Equality and ordering</h2>
           <p class="section-desc"></p>
         </th>
@@ -509,7 +528,7 @@
       <tr>
         
         <td>
-          <p><code><a href="vec-rep.html">vec_rep()</a></code> <code><a href="vec-rep.html">vec_rep_each()</a></code> </p>
+          <p><code><a href="vec-rep.html">vec_rep()</a></code> <code><a href="vec-rep.html">vec_rep_each()</a></code> <code><a href="vec-rep.html">vec_unrep()</a></code> </p>
         </td>
         <td><p>Repeat a vector</p></td>
       </tr><tr>
@@ -518,6 +537,12 @@
           <p><code><a href="vec_seq_along.html">vec_seq_along()</a></code> <code><a href="vec_seq_along.html">vec_init_along()</a></code> </p>
         </td>
         <td><p>Useful sequences</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_identify_runs.html">vec_identify_runs()</a></code> </p>
+        </td>
+        <td><p>Runs</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -537,6 +562,43 @@
           <p><code><a href="list_of.html">list_of()</a></code> <code><a href="list_of.html">as_list_of()</a></code> <code><a href="list_of.html">validate_list_of()</a></code> <code><a href="list_of.html">is_list_of()</a></code> <code><a href="list_of.html">vec_ptype2(<i>&lt;vctrs_list_of&gt;</i>)</a></code> <code><a href="list_of.html">vec_cast(<i>&lt;vctrs_list_of&gt;</i>)</a></code> </p>
         </td>
         <td><p><code>list_of</code> S3 class for homogenous lists</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-data-frame" class="hasAnchor"><a href="#section-data-frame" class="anchor"></a>Data frame</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="df_list.html">df_list()</a></code> </p>
+        </td>
+        <td><p>Collect columns for data frame construction</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="new_data_frame.html">new_data_frame()</a></code> </p>
+        </td>
+        <td><p>Assemble attributes for data frame construction</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="data_frame.html">data_frame()</a></code> </p>
+        </td>
+        <td><p>Construct a data frame</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="df_ptype2.html">df_ptype2()</a></code> <code><a href="df_ptype2.html">df_cast()</a></code> <code><a href="df_ptype2.html">tib_ptype2()</a></code> <code><a href="df_ptype2.html">tib_cast()</a></code> </p>
+        </td>
+        <td><p>Coercion between two data frames</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -596,12 +658,6 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="df_ptype2.html">df_ptype2()</a></code> <code><a href="df_ptype2.html">df_cast()</a></code> <code><a href="df_ptype2.html">tib_ptype2()</a></code> <code><a href="df_ptype2.html">tib_cast()</a></code> </p>
-        </td>
-        <td><p>Coercion between two data frames</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="vctrs-conditions.html">stop_incompatible_type()</a></code> <code><a href="vctrs-conditions.html">stop_incompatible_cast()</a></code> <code><a href="vctrs-conditions.html">stop_incompatible_op()</a></code> <code><a href="vctrs-conditions.html">stop_incompatible_size()</a></code> <code><a href="vctrs-conditions.html">allow_lossy_cast()</a></code> </p>
         </td>
         <td><p>Custom conditions for vctrs package</p></td>
@@ -653,6 +709,12 @@
           <p><code><a href="vec_as_names.html">vec_as_names()</a></code> </p>
         </td>
         <td><p>Retrieve and repair names</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="vec_names.html">vec_names2()</a></code> <code><a href="vec_names.html">vec_names()</a></code> <code><a href="vec_names.html">vec_set_names()</a></code> </p>
+        </td>
+        <td><p>Get or set the names of a vector</p></td>
       </tr><tr>
         
         <td>
